@@ -1,0 +1,13 @@
+# Angular
+angular-app/node_modules/
+angular-app/dist/
+angular-app/.angular/
+angular-app/.cache/
+
+# Playwright
+playwright-tests/node_modules/
+playwright-tests/test-results/
+playwright-tests/playwright-report/
+
+# MacOS junk
+.DS_Store
