@@ -13,6 +13,17 @@
 
 **_Angular Application_**
 Install dependencies and start the Angular app locally. 
+- cd angular-app
+- npm install -g @angular/cli
+- npm install
+- npm start
+- npm install --save-dev @types/ws #optional, fixes some ws typing errors
+
 
 **_Playwright tests _**
 Install dependencies and make sure Playwright browsers are installed.
+- cd playwright-tests
+- npm install
+- npm init playwright@latest
+- npm install dotenv --save
+- npm install --save-dev @types/node
