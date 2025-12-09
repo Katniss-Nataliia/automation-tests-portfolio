@@ -2,31 +2,28 @@ import { test, expect } from '@playwright/test';
 import { FormsPage } from '../pages/formsPage';
 import { NavigationMenu } from '../pages/navigationMenu';
 import { PageManager } from '../pages/pageManager';
+import { getTestConfigs } from '../config';
 
+const { url, userEmail, password, name} = getTestConfigs().DEFAULT;
 
 test.describe('Fill Inline Form', () => {
 
     test.beforeEach(async ({page}) => {
-        await page.goto('http://localhost:4200/');
+        await page.goto(url);
     });
 
     test('Fill and submit inline form', async ({page})=>{
         const formsPage = new FormsPage(page);
         const navigationMenu = new NavigationMenu(page);
-        const name = "John Smith";
-        const email = "john.smith@gmail.com";
-
         await navigationMenu.navigateToFormLayoutsMenu();
-        await formsPage.fillInlineForm(name, email, true);
+        await formsPage.fillInlineForm(name, userEmail, true);
     });
 
     test ('Submit Using The Grid form', async({page}) => {
         const pm = new PageManager(page);
-        const email = "john.smith@gmail.com";
-        const password = "123456";
         const option = "Option 1";
         await pm.navigateTo().navigateToFormLayoutsMenu();
-        await pm.onFormLayoutsPage().submitUsingTheGridForm(email, password, option);
+        await pm.onFormLayoutsPage().submitUsingTheGridForm(userEmail, password, option);
     });
     
 });
