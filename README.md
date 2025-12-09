@@ -20,7 +20,7 @@ Install dependencies and start the Angular app locally.
 - npm install --save-dev @types/ws #optional, fixes some ws typing errors
 
 
-**_Playwright tests _**
+_**Playwright tests**_
 Install dependencies and make sure Playwright browsers are installed.
 - cd playwright-tests
 - npm install
